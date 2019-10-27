@@ -1,18 +1,14 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import HomepageImage from './components/HomepageImage'
-import Seat from './components/Seat'
 
 function App() {
   return (
     <div className="App">
-      <div id="teachersdesk">教卓</div>
-
-      <div id="classroom">
       <header className="App-header">
-        <HomepageImage />
+        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          First react website.
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -23,8 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      </div>
-
     </div>
   );
 }

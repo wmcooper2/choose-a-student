@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
 import HomepageImage from './components/HomepageImage'
+import Seat from './components/Seat'
 
 function App() {
   return (
     <div className="App">
+      <div id="teachersdesk">教卓</div>
+
+      <div id="classroom">
       <header className="App-header">
         <HomepageImage />
         <p>
@@ -19,6 +23,8 @@ function App() {
           Learn React
         </a>
       </header>
+      </div>
+
     </div>
   );
 }

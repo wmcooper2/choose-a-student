@@ -1,39 +1,38 @@
 :root {
-    --button-grey: rgba(155, 155, 155, 0.9);
-    --border-green: rgba(79, 249, 0, 1.0);
-    --seat-size: 80px;
+  --button-grey: rgba(155, 155, 155, 0.9);
+  --border-green: rgba(79, 249, 0, 1);
+  --seat-size: 8vw;
 }
 
 body {
-  background-color: rgba(18, 30, 35, 1.0);
+  background-color: rgba(18, 30, 35, 1);
 }
 
-#teachersdesk{
+#teachersdesk {
   text-align: center;
   height: 20px;
 }
 
-#reset, #random{
+#reset,
+#random {
   border-radius: 6px;
   background-color: var(--button-grey);
 }
 
-#classroom{
+#classroom {
   display: flex;
   flex-direction: column;
-  min-width: 700px;
-  min-height: 700px;
 }
 
-.row{
+.row {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.seat{
+.seat {
   position: relative;
-  border: 4px solid rgba(72, 120, 140, 1.0);
+  border: 4px solid rgba(72, 120, 140, 1);
   border-radius: 15px;
   width: var(--seat-size);
   height: var(--seat-size);
@@ -42,13 +41,13 @@ body {
   vertical-align: middle;
 }
 
-.seat:hover{
+.seat:hover {
   border: 4px solid var(--border-green);
 }
 
-button{
+button {
   margin: 10px;
 }
 
-button:focus{
+button:focus {
 }

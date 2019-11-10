@@ -1,40 +1,7 @@
 import React from "react";
-import "./volunteers.css";
-
-function Controls(props) {
-  return (
-    <div className="row">
-      <button id="reset" onClick={props.handleClick}>
-        Reset
-      </button>
-      <button id="random" onClick={props.handleClick}>
-        Random
-      </button>
-    </div>
-  );
-}
-
-let seatID = 0;
-function Seat(props) {
-  return (
-    <button
-      className="seat"
-      value="true"
-      onClick={props.handleClick}
-      id={seatID++}
-    >
-      {props.id}
-    </button>
-  );
-}
-
-function Row(props) {
-  let row = [];
-  for (let i = 0; i < 6; i++) {
-    row.push(<Seat key={i} handleClick={props.handleClick} />);
-  }
-  return <div className="row">{row}</div>;
-}
+import "./App.css";
+import Controls from "./components/controls";
+import Row from "./components/rows";
 
 class App extends React.Component {
   constructor(props) {
@@ -106,7 +73,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id="classroom">
+      <div className="container" id="classroom">
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+        <Row />
         <Row />
         <Controls handleClick={this.click} />
       </div>

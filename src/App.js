@@ -1,57 +1,61 @@
-import React from 'react';
-//import logo from './logo.svg';
-import './App.css';
-import './volunteers.css';
+import React from "react";
+import "./volunteers.css";
 
-
-//add click listener and unique id to all squares
-//let squares = document.querySelectorAll(".seat");
-//for (let index of nums){
-//  squares[index].addEventListener("click", emptySeat);
-//  squares[index].setAttribute("id", "seat" + index);
-//}
-//
-//
-
-//
-class Sidebar extends React.Component {
-  render(){
-    return (
-      <div id="sidebar">
-        <button value="false" id="absentbtn" onClick={this.props.onClick}>Absent</button>
-        <button id="reset" onClick={this.props.onClick}>Reset</button>
-        <button id="random" onClick={this.props.onClick}>Random</button>
-      </div>
-    );
-  }
+function Controls(props) {
+  return (
+    <div className="row">
+      <button id="reset" onClick={props.handleClick}>
+        Reset
+      </button>
+      <button id="random" onClick={props.handleClick}>
+        Random
+      </button>
+    </div>
+  );
 }
 
-class Seat extends React.Component {
-  render(){
-    return (
-      <button class="seat" value="true" onClick={this.props.handleClick}></button>
-    );
-  }
+let seatID = 0;
+function Seat(props) {
+  return (
+    <button
+      className="seat"
+      value="true"
+      onClick={props.handleClick}
+      id={seatID++}
+    >
+      {props.id}
+    </button>
+  );
 }
 
+function Row(props) {
+  let row = [];
+  for (let i = 0; i < 6; i++) {
+    row.push(<Seat key={i} handleClick={props.handleClick} />);
+  }
+  return <div className="row">{row}</div>;
+}
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
+    this.state = {
+      choices: [...Array(36).keys()]
+    };
     this.click = this.click.bind(this);
     this.emptySeat = this.emptySeat.bind(this);
     this.absentBtnClick = this.absentBtnClick.bind(this);
-    this.randomBtnClick = this.randomBtnClick.bind(this);
-    this.resetBtnClick = this.resetBtnClick.bind(this);
+    this.randomChoice = this.randomChoice.bind(this);
+    //    this.resetBtnClick = this.resetBtnClick.bind(this);
   }
 
   blue = "rgba(0, 92, 211, 0.8)";
   grey = "rgba(155, 155, 155, 0.9)";
   white = "rgba(255, 255, 255, 1.0)";
 
-  emptySeat(event){
+  emptySeat(event) {
     let sq = document.elementFromPoint(event.clientX, event.clientY);
-    if (sq.value === "true"){
+    if (sq.value === "true") {
       sq.style.backgroundColor = this.grey;
       sq.setAttribute("value", "false");
     } else {
@@ -60,18 +64,8 @@ class App extends React.Component {
     }
   }
 
-  nums = [];
-
-  // nums for seat ID's
-//  let nums = [];
-//  for (let i = 0; i < 36; i++){
-//    nums.push(i);
-//  }
-
-
-
-  absentBtnClick(event){
-    if (this.value === "true"){
+  absentBtnClick(event) {
+    if (this.value === "true") {
       this.style.backgroundColor = this.grey;
       this.setAttribute("value", "false");
     } else {
@@ -80,56 +74,41 @@ class App extends React.Component {
     }
   }
 
-
-  randomBtnClick(event){
-    let numChoice = Math.floor(Math.random()*this.nums.length);
-    let choice = document.getElementById("seat"+ this.nums[numChoice]);
-    choice.focus();
-    choice.style.backgroundColor = this.grey;
-    this.nums = [...this.nums.slice(0, numChoice), ...this.nums.slice(numChoice+1, )];
-    
+  randomChoice() {
+    let numChoice = Math.floor(Math.random() * this.state.choices.length);
+    console.log("numChoice = " + numChoice);
+    //    let choice = document.getElementById("seat"+ this.nums[numChoice]);
+    //    choice.focus();
+    //    choice.style.backgroundColor = this.grey;
+    //    this.nums = [...this.nums.slice(0, numChoice), ...this.nums.slice(numChoice+1, )];
   }
 
+  //  resetBtn.onclick = () => {
+  //    for (let sq of squares){
+  //      sq.setAttribute("value", "false");
+  //      sq.style.backgroundColor = this.white;
+  //    }
+  //  }
 
-  resetBtnClick(event){
-    console.log("cliced reset");
-  //resetBtn.onclick = () => {
-//    for (let sq of squares){
-//      sq.setAttribute("value", "false");
-//      sq.style.backgroundColor = this.white;
-//    }
-  }
-
-
-  click(event){
-  //need a single handleClick that handles these
-    if (event.target.id === "absentBtn"){
-      console.log("absent");
-    } else if (event.target.id === "reset"){
+  click(event) {
+    //    console.log(event.target.id);
+    if (event.target.id === "reset") {
       console.log("reset");
-    } else if (event.target.id === "random"){
-      console.log("random");
+    } else if (event.target.id === "random") {
+      this.randomChoice();
+    } else {
+      //      console.log(event.target.id);
+      let name = document.getElementById(event.target.id);
+      console.log("name = " + name);
+      //      console.log(this.state.choices);
     }
   }
 
-
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-
-          <div id="classroom">
-            <div class="row">
-              <button class="seat" value="true"></button>
-              <button class="seat" value="true"></button>
-              <button class="seat" value="true"></button>
-              <button class="seat" value="true"></button>
-              <button class="seat" value="true"></button>
-            </div>
-          </div>
-          <Sidebar onClick={this.click} />
-
-        </header>
+      <div id="classroom">
+        <Row />
+        <Controls handleClick={this.click} />
       </div>
     );
   }

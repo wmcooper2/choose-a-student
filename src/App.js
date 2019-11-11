@@ -11,17 +11,7 @@ class App extends React.Component {
     };
   }
 
-  emptySeat = event => {
-    let sq = document.elementFromPoint(event.clientX, event.clientY);
-    if (sq.value === "true") {
-      sq.style.backgroundColor = this.grey;
-      sq.setAttribute("value", "false");
-    } else {
-      sq.style.backgroundColor = this.white;
-      sq.setAttribute("value", "true");
-    }
-  };
-
+  //maybe future functionality
   absentBtnClick = event => {
     if (this.value === "true") {
       this.style.backgroundColor = this.grey;
@@ -34,41 +24,29 @@ class App extends React.Component {
 
   randomChoice = () => {
     let numChoice = Math.floor(Math.random() * this.state.choices.length);
-    console.log("numChoice = " + numChoice);
-    //    let choice = document.getElementById("seat"+ this.nums[numChoice]);
-    //    choice.focus();
-    //    choice.style.backgroundColor = this.grey;
-    //    this.nums = [...this.nums.slice(0, numChoice), ...this.nums.slice(numChoice+1, )];
+    let choice = this.state.choices[numChoice];
+    console.log(choice);
+    this.updateChoices(choice);
   };
 
-  //  resetBtn.onclick = () => {
-  //    for (let sq of squares){
-  //      sq.setAttribute("value", "false");
-  //      sq.style.backgroundColor = this.white;
-  //    }
-  //  }
-
-  handleClick = props => {
-    console.log("handleClick props = ", props);
+  updateChoices = props => {
     let newChoices = [...this.state.choices].filter(choice => choice !== props);
-    console.log(newChoices);
     this.setState({
       choices: newChoices
     });
+    console.log(this.state.choices);
+  };
 
-    //    console.log(props.target.id);
-    /*
-    if (props.target.id === "reset") {
-      console.log("reset");
-    } else if (props.target.id === "random") {
+  handleClick = props => {
+    if (props === "reset") {
+      this.setState({
+        choices: [...Array(36).keys()]
+      });
+    } else if (props === "random") {
       this.randomChoice();
     } else {
-      //      console.log(props.target.id);
-      let name = document.getElementById(props.target.id);
-      console.log("name = " + name);
-      //      console.log(this.state.choices);
+      this.updateChoices(props);
     }
-    */
   };
 
   render() {

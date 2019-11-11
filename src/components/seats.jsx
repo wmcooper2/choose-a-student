@@ -1,16 +1,24 @@
 import React from "react";
 
-let seatID = 0;
 const Seat = props => {
+  const { seatKey, choices } = props;
+  let style;
+  if (choices.includes(seatKey)) {
+    style = { backgroundColor: "white" };
+  } else {
+    style = { backgroundColor: "#39525e" };
+  }
+
   return (
     <button
       className="seat"
       value="true"
-      onClick={props.handleClick}
-      id={seatID++}
-    >
-      {props.id}
-    </button>
+      onClick={() => {
+        props.handleClick(seatKey);
+      }}
+      id={seatKey}
+      style={style}
+    ></button>
   );
 };
 

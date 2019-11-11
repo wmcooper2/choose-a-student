@@ -41,10 +41,6 @@ body {
   vertical-align: middle;
 }
 
-.seat:hover {
-  border: 4px solid var(--border-green);
-}
-
 button {
   margin: 10px;
 }

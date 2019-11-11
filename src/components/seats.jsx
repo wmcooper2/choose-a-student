@@ -10,7 +10,7 @@ const Seat = props => {
   }
 
   return (
-    <button
+    <div
       className="seat"
       value="true"
       onClick={() => {
@@ -18,7 +18,7 @@ const Seat = props => {
       }}
       id={seatKey}
       style={style}
-    ></button>
+    ></div>
   );
 };
 

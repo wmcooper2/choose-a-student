@@ -4,8 +4,8 @@ const Controls = props => {
   const resetID = "reset";
   const randomID = "random";
   return (
-    <div className="row">
-      <button
+    <div className="row btn-group" id="controlbox">
+      <div
         className="btn btn-primary"
         id="reset"
         onClick={() => {
@@ -13,8 +13,8 @@ const Controls = props => {
         }}
       >
         Reset
-      </button>
-      <button
+      </div>
+      <div
         className="btn btn-primary"
         id="random"
         onClick={() => {
@@ -22,7 +22,7 @@ const Controls = props => {
         }}
       >
         Random
-      </button>
+      </div>
     </div>
   );
 };

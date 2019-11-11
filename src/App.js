@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Controls from "./components/controls";
 import Row from "./components/rows";
+import "bootstrap/dist/css/bootstrap.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,6 @@ class App extends React.Component {
   randomChoice = () => {
     let numChoice = Math.floor(Math.random() * this.state.choices.length);
     let choice = this.state.choices[numChoice];
-    console.log(choice);
     this.updateChoices(choice);
   };
 
@@ -34,7 +34,6 @@ class App extends React.Component {
     this.setState({
       choices: newChoices
     });
-    console.log(this.state.choices);
   };
 
   handleClick = props => {

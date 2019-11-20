@@ -12,6 +12,10 @@ class App extends React.Component {
     };
   }
 
+  //add other templates for different group settings
+  //make buttons or a drop down menu for choosing the different arrangements
+  //add drag and drop to customize the arrangements too
+
   //maybe future functionality
   absentBtnClick = event => {
     if (this.value === "true") {

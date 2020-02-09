@@ -8,9 +8,9 @@ Additionally, in my school the classes are shuffled around for English class whi
 To use:
 * the squares represent the most common class arrangement (6x6)
 * click the "Random" button
-* you can click the squares directly which removes them from the random selction
+* you can click the squares directly which removes them from the random selection
+* the most recently, randomly selected seat is a different color (so you dont have to remember which one is next)
 
 Ideas for future functionality:
 * add a drag drop feature to customize the seating arrangements
 * add other common classroom arrangements (lunch groups, etc)
-* add a glow around the seat that was chosen most recently and remove it when a new seat is chosen.

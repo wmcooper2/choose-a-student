@@ -14,6 +14,7 @@ const Controls = props => {
       >
         Reset
       </div>
+
       <div
         className="btn btn-primary"
         id="random"

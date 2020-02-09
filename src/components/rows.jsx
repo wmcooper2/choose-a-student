@@ -2,7 +2,7 @@ import React from "react";
 import Seat from "./seats";
 
 function Row(props) {
-  const { choices } = props.props;
+  const { choices, chosen } = props.props;
   let row = [];
   for (let i = 0; i < 6; i++) {
     row.push(
@@ -11,9 +11,11 @@ function Row(props) {
         key={props.rowKey + i}
         handleClick={props.handleClick}
         choices={choices}
+        chosen={chosen}
       />
     );
   }
+
   return <div className="row">{row}</div>;
 }
 

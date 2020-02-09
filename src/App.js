@@ -1,31 +1,21 @@
 import React from "react";
-import "./App.css";
 import Controls from "./components/controls";
 import Row from "./components/rows";
 import "bootstrap/dist/css/bootstrap.css";
+import "./App.css";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      choices: [...Array(36).keys()]
+      choices: [...Array(36).keys()],
+      chosen: null
     };
   }
 
   //add other templates for different group settings
   //make buttons or a drop down menu for choosing the different arrangements
   //add drag and drop to customize the arrangements too
-
-  //maybe future functionality
-  absentBtnClick = event => {
-    if (this.value === "true") {
-      this.style.backgroundColor = this.grey;
-      this.setAttribute("value", "false");
-    } else {
-      this.style.backgroundColor = this.blue;
-      this.setAttribute("value", "true");
-    }
-  };
 
   randomChoice = () => {
     let numChoice = Math.floor(Math.random() * this.state.choices.length);
@@ -34,21 +24,35 @@ class App extends React.Component {
   };
 
   updateChoices = props => {
-    let newChoices = [...this.state.choices].filter(choice => choice !== props);
-    this.setState({
-      choices: newChoices
+    let newChoices = [...this.state.choices].filter(item => item !== props);
+    //passing callback to setState forces immediate update? -ish?
+    this.setState(state => {
+      return {
+        choices: newChoices,
+        chosen: props
+      };
+    });
+  };
+
+  emptySeat = props => {
+    let newChoices = [...this.state.choices].filter(item => item !== props);
+    this.setState(state => {
+      return {
+        choices: newChoices
+      };
     });
   };
 
   handleClick = props => {
     if (props === "reset") {
       this.setState({
-        choices: [...Array(36).keys()]
+        choices: [...Array(36).keys()],
+        chosen: null
       });
     } else if (props === "random") {
       this.randomChoice();
     } else {
-      this.updateChoices(props);
+      this.emptySeat(props);
     }
   };
 

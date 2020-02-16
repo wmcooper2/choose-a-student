@@ -59,6 +59,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="container" id="classroom">
+        <div className="topdiv">
+          <div className="frontofclass">卓球</div>
+        </div>
         <Row rowKey={0} props={this.state} handleClick={this.handleClick} />
         <Row rowKey={6} props={this.state} handleClick={this.handleClick} />
         <Row rowKey={12} props={this.state} handleClick={this.handleClick} />
@@ -66,6 +69,9 @@ class App extends React.Component {
         <Row rowKey={24} props={this.state} handleClick={this.handleClick} />
         <Row rowKey={30} props={this.state} handleClick={this.handleClick} />
         <Controls handleClick={this.handleClick} />
+        <div className="instructions">
+          Click a seat to remove it from the random selection.
+        </div>
       </div>
     );
   }

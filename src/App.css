@@ -29,8 +29,8 @@ html {
 
 .seat {
   position: relative;
-  border: 4px solid var(--border-blue);
-  border-radius: 15px;
+  border: 1px solid var(--border-blue);
+  border-radius: 6px;
   width: var(--seat-size);
   height: var(--seat-size);
   margin: 6px 6px;
@@ -38,7 +38,33 @@ html {
   vertical-align: middle;
 }
 
+.seat:hover {
+  box-shadow: inset 0px 0px 4px 2px black;
+}
+
+.topdiv {
+  display: flex;
+  justify-content: center;
+}
+
+.frontofclass {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  font-size: 2.5em;
+  width: 10%;
+  height: auto;
+  border-radius: 6px;
+}
+
 #controlbox {
   margin: auto;
   background-color: var(--background-black);
+}
+
+.instructions {
+  display: flex;
+  justify-content: center;
+  color: white;
 }

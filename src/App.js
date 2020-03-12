@@ -60,7 +60,7 @@ class App extends React.Component {
     return (
       <div className="container" id="classroom">
         <div className="topdiv">
-          <div className="frontofclass">卓球</div>
+          <div className="frontofclass">教卓</div>
         </div>
         <Row rowKey={0} props={this.state} handleClick={this.handleClick} />
         <Row rowKey={6} props={this.state} handleClick={this.handleClick} />

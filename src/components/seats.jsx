@@ -7,11 +7,9 @@ const Seat = props => {
     style = { backgroundColor: "white" };
   } else {
     style = { backgroundColor: "#06d66e" };
-    // style = { backgroundColor: "#39525e" };
   }
 
   if (seatKey === chosen) {
-    // style.backgroundColor = "#c70039";
     style.backgroundColor = "rgb(61, 86, 230)";
   }
 

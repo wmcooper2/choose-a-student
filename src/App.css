@@ -4,7 +4,8 @@
   --border-blue: rgba(72, 120, 140, 1);
   --background-black: rgba(18, 30, 35, 1);
   --light-blue: rgb(146, 193, 255);
-  --dark-blue: rgb(61, 86, 230);
+  --dark-blue: rgb(48, 112, 231);
+  --button-blue: rgb(22, 122, 246);
   --white: rgb(255, 255, 255);
 
   --teachers-desk-margin: 1vh;
@@ -86,4 +87,7 @@ body {
   justify-content: center;
   color: var(--white);
   font-weight: bold;
+  background-color: var(--button-blue);
+  border-radius: var(--small-radius);
+  width: var(--classH);
 }

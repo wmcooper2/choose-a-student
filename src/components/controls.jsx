@@ -1,7 +1,7 @@
 import React from "react";
 
 const Controls = props => {
-  const buttonTypes = ["Reset", "Random", "Use Numbers", "All at once"];
+  const buttonTypes = ["Reset", "Random", "Use Numbers"];
   let buttons = [];
   buttonTypes.forEach(item =>
     buttons.push(

@@ -3,22 +3,36 @@
   --border-green: rgba(79, 249, 0, 1);
   --border-blue: rgba(72, 120, 140, 1);
   --background-black: rgba(18, 30, 35, 1);
+  --light-blue: rgb(146, 193, 255);
+  --dark-blue: rgb(61, 86, 230);
+  --white: rgb(255, 255, 255);
+
+  --teachers-desk-margin: 1vh;
+  --teachers-desk-height: 5vh;
+  --buttons-height: 5vh;
+  --current-seat-color: #06d66e;
+  --classH: 84vh;
+  --flex-seat: calc(var(--classH) / 6);
   --seat-size: 6vw;
-}
-html {
-  background-color: var(--background-black);
-}
-
-#root {
-  width: 101vw;
-  height: 100vh;
-  background-color: var(--background-black);
+  --small-radius: 6px;
+  font-size: 16px;
 }
 
-#classroom {
+#root,
+body {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-black);
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 .row {
@@ -28,14 +42,17 @@ html {
 }
 
 .seat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  border: 1px solid var(--border-blue);
-  border-radius: 6px;
-  width: var(--seat-size);
-  height: var(--seat-size);
-  margin: 6px 6px;
+  width: var(--flex-seat);
+  height: var(--flex-seat);
   text-align: center;
   vertical-align: middle;
+  box-shadow: inset 0px 0px 10px var(--light-blue);
+  color: black;
+  font-size: 3rem;
 }
 
 .seat:hover {
@@ -47,24 +64,26 @@ html {
   justify-content: center;
 }
 
-.frontofclass {
+.teachers-desk {
   display: flex;
   justify-content: center;
   background-color: white;
   color: black;
-  font-size: 2.5em;
-  width: 10%;
-  height: auto;
-  border-radius: 6px;
+  font-size: 1.8em;
+  width: calc(var(--flex-seat) * 2);
+  height: var(--teachers-desk-height);
+  border-radius: var(--small-radius);
 }
 
 #controlbox {
+  width: var(--classH);
   margin: auto;
-  background-color: var(--background-black);
+  height: var(--buttons-height);
 }
 
 .instructions {
   display: flex;
   justify-content: center;
-  color: white;
+  color: var(--white);
+  font-weight: bold;
 }

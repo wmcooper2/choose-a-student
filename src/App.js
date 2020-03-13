@@ -9,7 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       choices: [...Array(36).keys()],
-      chosen: null
+      chosen: null,
+      useNumbers: false
     };
   }
 
@@ -25,8 +26,7 @@ class App extends React.Component {
 
   updateChoices = props => {
     let newChoices = [...this.state.choices].filter(item => item !== props);
-    //passing callback to setState forces immediate update? -ish?
-    this.setState(state => {
+    this.setState(() => {
       return {
         choices: newChoices,
         chosen: props
@@ -44,13 +44,21 @@ class App extends React.Component {
   };
 
   handleClick = props => {
-    if (props === "reset") {
-      this.setState({
-        choices: [...Array(36).keys()],
-        chosen: null
+    if (props === "Reset") {
+      this.setState(() => {
+        return {
+          choices: [...Array(36).keys()],
+          chosen: null
+        };
       });
-    } else if (props === "random") {
+    } else if (props === "Random") {
       this.randomChoice();
+    } else if (props === "Use Numbers") {
+      this.setState(() => {
+        return {
+          useNumbers: !this.state.useNumbers
+        };
+      });
     } else {
       this.emptySeat(props);
     }
@@ -58,21 +66,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container" id="classroom">
-        <div className="topdiv">
-          <div className="frontofclass">教卓</div>
-        </div>
-        <Row rowKey={0} props={this.state} handleClick={this.handleClick} />
-        <Row rowKey={6} props={this.state} handleClick={this.handleClick} />
-        <Row rowKey={12} props={this.state} handleClick={this.handleClick} />
-        <Row rowKey={18} props={this.state} handleClick={this.handleClick} />
-        <Row rowKey={24} props={this.state} handleClick={this.handleClick} />
-        <Row rowKey={30} props={this.state} handleClick={this.handleClick} />
+      <React.Fragment>
+        <div className="teachers-desk">教卓</div>
+        <Row rowKey={0} handleClick={this.handleClick} {...this.state} />
+        <Row rowKey={6} handleClick={this.handleClick} {...this.state} />
+        <Row rowKey={12} handleClick={this.handleClick} {...this.state} />
+        <Row rowKey={18} handleClick={this.handleClick} {...this.state} />
+        <Row rowKey={24} handleClick={this.handleClick} {...this.state} />
+        <Row rowKey={30} handleClick={this.handleClick} {...this.state} />
         <Controls handleClick={this.handleClick} />
-        <div className="instructions">
+        <p className="instructions">
           Click a seat to remove it from the random selection.
-        </div>
-      </div>
+        </p>
+      </React.Fragment>
     );
   }
 }

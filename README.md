@@ -1,5 +1,4 @@
 ### Notes
-* build/ was renamed to choose-a-student/
 * This is a simple, cross-browser tool that allows you to choose students without seat numbers or names.
 
 Often, students are too shy/lazy/unininterested/etc to raise their hand.

@@ -1,7 +1,7 @@
 # Classroom Volunteers
 * An app to choose classroom "volunteers" without seat numbers or names.
 
-![Screenshot](classroom-volunteers.jpg)
+![Screenshot](screenshot.jpg)
 
 ## Purpose/Goal
 This app removes the stress of a student feeling "singled out" by a teacher, and offers a fair way to determine volunteer order when a task is given.  

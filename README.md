@@ -1,5 +1,5 @@
 # Classroom Volunteers
-* An app to choose classroom "volunteers" without seat numbers or names.
+An app to choose classroom "volunteers" without seat numbers or names.
 
 ![Screenshot](screenshot.jpg)
 
@@ -18,6 +18,7 @@ This app removes the stress of a student feeling "singled out" by a teacher, and
 * CSS
 * JavaScript
 * React
+* Bootstrap
 
 ## Problems/Solutions
 Often, students are too shy/lazy/unininterested/etc to raise their hand. In my schools the classes are often shuffled around for English class which makes choosing students based on seat number slightly annoying. This app can help speed things up because the students won't laze about wasting time deciding who goes first.

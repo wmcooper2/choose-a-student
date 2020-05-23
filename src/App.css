@@ -57,7 +57,19 @@ body {
 }
 
 .seat:hover {
-  box-shadow: inset 0px 0px 4px 2px black;
+  box-shadow: inset 0px 0px 4px 2px white;
+}
+
+.whiteSeat {
+  background-color: white;
+}
+
+.greenSeat {
+  background-color: #06d66e;
+}
+
+.chosenSeat {
+  background-color: rgb(61, 86, 230);
 }
 
 .topdiv {

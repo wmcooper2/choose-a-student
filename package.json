@@ -1,8 +1,8 @@
 {
-  "name": "volunteers",
+  "name": "classroom-volunteers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://teflassistant.com/volunteers",
+  "homepage": "/classroom-volunteers",
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",

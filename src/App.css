@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--light-blue);
+  background-color: black;
   color: var(--white);
 }
 
@@ -51,13 +51,14 @@ body {
   height: var(--flex-seat);
   text-align: center;
   vertical-align: middle;
-  box-shadow: inset 0px 0px 10px var(--light-blue);
+  box-shadow: inset 0px 0px 5px black;
   color: black;
   font-size: 3rem;
+  transition-duration: 500ms;
 }
 
 .seat:hover {
-  box-shadow: inset 0px 0px 4px 2px white;
+  box-shadow: none;
 }
 
 .whiteSeat {
@@ -82,16 +83,16 @@ body {
   justify-content: center;
   background-color: white;
   color: black;
-  font-size: 1.8em;
-  width: calc(var(--flex-seat) * 2);
-  height: var(--teachers-desk-height);
-  border-radius: var(--small-radius);
+  font-size: 1em;
+  width: 100%;
+  transition-duration: 500ms;
 }
 
 #controlbox {
   width: var(--classH);
   margin: auto;
   height: var(--buttons-height);
+  transition-duration: 500ms;
 }
 
 .instructions {
@@ -102,4 +103,5 @@ body {
   background-color: var(--button-blue);
   border-radius: var(--small-radius);
   width: var(--classH);
+  transition-duration: 500ms;
 }

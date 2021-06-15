@@ -81,7 +81,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="teachers-desk">教卓</div>
+        <div className="teachers-desk">Front of class</div>
         <Row rowKey={0} handleClick={this.handleClick} {...this.state} />
         <Row rowKey={6} handleClick={this.handleClick} {...this.state} />
         <Row rowKey={12} handleClick={this.handleClick} {...this.state} />

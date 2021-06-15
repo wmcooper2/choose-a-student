@@ -2,12 +2,7 @@ import React from "react";
 
 const Seat = (props) => {
   const { seatKey, seats, chosen, useNumbers } = props;
-  let seatClass;
-  if (seats.includes(seatKey)) {
-    seatClass = "seat whiteSeat";
-  } else {
-    seatClass = "seat greenSeat";
-  }
+  let seatClass = seats.includes(seatKey) ? "seat whiteSeat" : "seat greenSeat";
 
   if (seatKey === chosen) {
     seatClass = "seat chosenSeat";

@@ -1,6 +1,6 @@
 {
   "name": "classroom-volunteers",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
   "homepage": "/classroom-volunteers",
   "dependencies": {
@@ -8,6 +8,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
+    "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "typescript": "^3.8.3"
